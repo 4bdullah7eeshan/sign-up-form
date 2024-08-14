@@ -1,8 +1,16 @@
+@font-face {
+    font-family: norse-bold;
+    src: url(../assets/Norse-Bold.otf);
+}
+
+/* Whole Document */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 1px solid black;
+    color: #59606b;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -13,9 +21,13 @@ body {
     height: 100vh;
 }
 
+
+/* Left Side */
+
 .background-image {
+    position: relative;
     flex: 0 0 35%; 
-    height: 100%;
+    height: 100vh;
     /* for containers */
     display: flex;
     flex-direction: column;
@@ -23,12 +35,22 @@ body {
     align-items: stretch;
 }
 
+.image {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+
+}
+
 .logo-container {
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
-    height: 120px;
+    height: 20%;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .logo {
@@ -36,16 +58,131 @@ body {
     width: auto;
 }
 
+.logo-text {
+    color: white;
+    font-family: norse-bold;
+    font-size: 80px;
+}
+
+
 .image-credits {
     align-self: center;
+    justify-self: flex-end;
+    color: white;
+    margin-bottom: 10px;
 }
+
+.image-credits a {
+    color: white;
+}
+
+/* Right Side */
 
 .form {
     flex: 1; 
-    height: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.fill {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.name-section,
+.contact-section,
+.password-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 70%;
+}
+
+.input-section {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.label-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+button {
+    background-color: #596D48;
+    color: white;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+label,
+.login {
+    font-weight: 600;
+}
+
+.description, 
+.submit-buttons {
+    background-color: #f9fafb;
+}
+
+.description,
+.input-section,
+.submit-buttons {
+    padding: 20px 60px 20px 40px;
+    flex: auto;
+}
+
+.bold {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+input:invalid {
+    outline: 1px solid red;
+}
+
+input:focus {
+    outline: 1px solid blue;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    border: 1px solid #E5E7EB;
+    padding: 3px 5px 3px 5px;
+    border-radius: 5px;
+
+}
+
+.login > a {
+    font-weight: bold;
+    color: #596D48;
+    text-decoration: none;
+}
+
+.submit-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.description,
+.input-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: stretch;
-    
+    gap: 20px;
 }
